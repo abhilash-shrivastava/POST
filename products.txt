@@ -1,0 +1,3 @@
+abcd Milk 250
+efgh Bread 170
+ijkl Water 100 

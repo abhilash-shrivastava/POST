@@ -1,0 +1,14 @@
+Abhilash Shrivastava
+abcd 
+efgh 
+CASH 1000
+
+Kartik Bholla
+abcd 2
+efgh 1
+CHECK 300
+
+Deeptanshu Jha
+ijkl 2
+abcd 3
+CREDIT 1234
