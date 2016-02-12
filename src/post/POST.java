@@ -37,25 +37,25 @@ public class POST {
 
     Transaction transaction = transactionMap.get(iteratorTransaction.next());
     System.out.println("----- SAFEWAY ----");
-    System.out.println(transaction.getName() + "  " + LocalDateTime.now());
+    System.out.println(transaction.getName() + "\t\t" + transaction.getDate());
     itemsUpc = transaction.getAllUPC();
     for(int i = 0; i < itemsUpc.size(); i++){
 
       ProductSpec productSpec = productMap.get(itemsUpc.get(i));
       float subTotal = ((productSpec.getPrice())*(transaction.getUpcQuantity(i)));
-      System.out.println(productSpec.getDescription() + "  " + transaction.getUpcQuantity(i) + " @ " + productSpec.getPrice() + "  " + subTotal);
+      System.out.println(productSpec.getDescription() + "\t\t\t" + transaction.getUpcQuantity(i) + " @ " + productSpec.getPrice() + "  " + subTotal);
       total = total + subTotal;
     }
-    System.out.println("Total: " + total);
+    System.out.println("Total: \t\t\t" + total);
     if (transaction.getPaymentType().equals("CHECK")){
       System.out.println("Paid By Check");
     }
     if (transaction.getPaymentType().equals("CREDIT")){
-      System.out.println("Credit Card" + "  " + (int)transaction.getAmountTender());
+      System.out.println("Credit Card" + "\t\t" + (int)transaction.getAmountTender());
     }
     if (transaction.getPaymentType().equals("CASH")){
-      System.out.println("Amount Tendered: " + transaction.getAmountTender());
-      System.out.println("Amount Returned: " + (transaction.getAmountTender() - total));      
+      System.out.println("Amount Tendered:\t" + transaction.getAmountTender());
+      System.out.println("Amount Returned:\t" + (transaction.getAmountTender() - total));      
     }
     total = 0;
     System.out.println("\n");
